@@ -20,7 +20,8 @@ $state = $_POST['state'];
 $sql = "INSERT INTO newemployee (first_name,last_name,gender,birth_date,aadharcard_no,joining_date,designation,email,mobile_number,address,city,state)
      VALUES ('$first_name','$last_name','$gender','$birth_date','$aadharcard_no','$joining_date','$designation','$email','$mobile_number','$address','$city','$state')";
      if (mysqli_query($conn, $sql)) {
-        echo "New record has been added successfully !";
+        // echo "New record has been added successfully !";
+        header('location:display.html');
      } else {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
      }
